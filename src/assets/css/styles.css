@@ -1,0 +1,70 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  position: relative;
+  padding: 0;
+  margin: 0; }
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  scroll-behavior: smooth; }
+
+ul,
+ol {
+  list-style: none; }
+
+a,
+a:active,
+a:hover {
+  text-decoration: none;
+  color: #000; }
+
+img {
+  max-width: 100%;
+  display: block; }
+
+select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none; }
+  select::-ms-expand {
+    display: none; }
+
+button {
+  border: none;
+  background: transparent; }
+
+.non-scroll {
+  touch-action: none;
+  -ms-touch-action: none;
+  overflow: hidden;
+  height: 100%; }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+#pagination .active {
+  background-image: linear-gradient(to top right, #d81b60 0%, #ec407a 75%);
+  color: #ffffff;
+  border: none;
+  transition: color 0.35s ease-in; }
+  #pagination .active:hover {
+    color: #000000; }
+
+#progress-bar > div {
+  transition: width 0.35s; }
+
+#progress-bar.loaded > div {
+  animation: loaded 4s ease-in-out;
+  width: 80%; }
+
+#progress-bar.completed > div {
+  width: 100%; }
+
+@keyframes loaded {
+  from {
+    width: 0; }
+  to {
+    width: 80%; } }

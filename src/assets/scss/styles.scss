@@ -1,0 +1,42 @@
+@import "reset";
+@import "tailwind";
+
+#pagination .active {
+  background-image: linear-gradient(
+    to top right,
+    rgba(216, 27, 96, 1) 0%,
+    rgba(236, 64, 122, 1) 75%
+  );
+
+  color: #ffffff;
+  border: none;
+  transition: color 0.35s ease-in;
+
+  &:hover {
+    color: #000000;
+  }
+}
+
+#progress-bar {
+  > div {
+    transition: width 0.35s;
+  }
+
+  &.loaded > div {
+    animation: loaded 4s ease-in-out;
+    width: 80%;
+  }
+
+  &.completed > div {
+    width: 100%;
+  }
+}
+
+@keyframes loaded {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80%;
+  }
+}
